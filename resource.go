@@ -1,6 +1,6 @@
 package qless
 
-import "github.com/garyburd/redigo/redis"
+import "github.com/gomodule/redigo/redis"
 
 type Resource interface {
 	Exists() bool

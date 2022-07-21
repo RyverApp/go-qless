@@ -3,7 +3,7 @@ package qless
 import (
 	"sync"
 
-	"github.com/garyburd/redigo/redis"
+	"github.com/gomodule/redigo/redis"
 )
 
 type Events struct {
