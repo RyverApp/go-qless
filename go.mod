@@ -1,6 +1,6 @@
 module github.com/ryverapp/go-qless
 
-go 1.15
+go 1.16
 
 require (
 	github.com/gomodule/redigo v1.8.9

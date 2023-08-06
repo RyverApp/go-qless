@@ -1,6 +1,7 @@
 package qless
 
 import (
+	_ "embed"
 	"errors"
 	"fmt"
 	"strconv"
@@ -8,6 +9,9 @@ import (
 
 	"github.com/gomodule/redigo/redis"
 )
+
+//go:embed qless.lua
+var qlessLua string
 
 type TaggedReply struct {
 	Total int
