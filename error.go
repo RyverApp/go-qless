@@ -39,5 +39,5 @@ func parseError(in error) error {
 
 func IsJobLost(err error) bool {
 	c, ok := err.(*CommandError)
-	return ok && strings.HasPrefix(c.Message, "Job given out to another worker")
+	return ok && strings.Contains(c.Message, "given out to another worker")
 }

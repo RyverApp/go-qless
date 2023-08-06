@@ -15,18 +15,18 @@ var (
 func init() {
 	redisHost = os.Getenv("REDIS_HOST")
 	if redisHost == "" {
-		panic("invalid REDIS_HOST")
+		redisHost = "localhost"
 	}
 	redisPort = os.Getenv("REDIS_PORT")
-
 	if redisPort == "" {
-		panic("invalid REDIS_PORT")
+		redisPort = "6379"
 	}
-
-	if db, err := strconv.Atoi(os.Getenv("REDIS_DB")); err != nil {
-		panic("invalid REDIS_DB")
-	} else {
-		redisDB = db
+	if db := os.Getenv("REDIS_DB"); db != "" {
+		if db, err := strconv.Atoi(db); err != nil {
+			panic("invalid REDIS_DB")
+		} else {
+			redisDB = db
+		}
 	}
 }
 
