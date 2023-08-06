@@ -15,4 +15,4 @@ json: $(JSON_OUT_FILES)
 	$(CLI) $^
 
 fmt:
-	$(ENV) goimports -w $$(find . -path ./vendor -prune -o -depth 1 -name "*.go" -print)
+	$(ENV) goimports -w $$(find . -maxdepth 1 -path ./vendor -prune -o -name "*.go" -print)

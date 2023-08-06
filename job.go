@@ -140,7 +140,7 @@ func (j *job) Complete() (string, error) {
 	return redis.String(j.c.Do("complete", timestamp(), j.d.JID, j.d.Worker, j.d.Queue, []byte(j.d.Data)))
 }
 
-//for big job, save memory in redis
+// for big job, save memory in redis
 func (j *job) CompleteWithNoData() (string, error) {
 	return redis.String(j.c.Do("complete", timestamp(), j.d.JID, j.d.Worker, j.d.Queue, finishBytes))
 }

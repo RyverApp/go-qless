@@ -85,11 +85,11 @@ func unmarshal(data []byte, v interface{}) error {
 // equal to nil, then Bool returns false, err. Otherwise Bool converts the
 // reply to boolean as follows:
 //
-//  Reply type      Result
-//  integer         value != 0, nil
-//  bulk            strconv.ParseBool(reply) or r != "False", nil
-//  nil             false, ErrNil
-//  other           false, error
+//	Reply type      Result
+//	integer         value != 0, nil
+//	bulk            strconv.ParseBool(reply) or r != "False", nil
+//	nil             false, ErrNil
+//	other           false, error
 func Bool(reply interface{}, err error) (bool, error) {
 	if err != nil {
 		return false, err
